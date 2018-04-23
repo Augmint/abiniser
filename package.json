@@ -1,0 +1,26 @@
+{
+    "name": "Abiniser",
+    "version": "0.0.0",
+    "description": "Truffle post processor to generate ABI and deployment repository files",
+    "main": "index.js",
+    "bin": {
+        "abiniser": "./abiniser.js"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": "git+https://github.com/Augmint/abiniser.git",
+    "keywords": ["truffle", "abi", "ethereum", "solidity"],
+    "author": "“Augmint”",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Augmint/abiniser/issues"
+    },
+    "homepage": "https://github.com/Augmint/abiniser#readme",
+    "private": false,
+    "dependencies": {
+        "commander": "2.15.1",
+        "json-stable-stringify": "1.0.1",
+        "md5": "2.2.1"
+    }
+}
