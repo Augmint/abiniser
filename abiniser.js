@@ -11,9 +11,9 @@ program
     .version(pjson.version)
     .description(pjson.description)
     .usage('[options]')
-    .option('-i, --input-dir [value]', 'Sets input directory with truffle contract json files.', './contracts/build')
-    .option('-a, --abi-output-dir [value]', 'Sets abi output directory.', './abis')
-    .option('-d, --deployments-output-dir [value]', 'Sets deployments output directory.', './deployments')
+    .option('-i, --input-dir [value]', 'Sets input directory with truffle contract json files.', './build/contracts')
+    .option('-a, --abi-output-dir [value]', 'Sets abi output directory.', './abiniser')
+    .option('-d, --deployments-output-dir [value]', 'Sets deployments output directory.', './abiniser')
     .option('-r, --regenerate', 'Regenerate abi files even if they exists with same abi hash', false)
     .option('-c, --config-file [value]', 'Sets abiniser config file.', './abiniser.json');
 
