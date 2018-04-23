@@ -1,6 +1,6 @@
 {
-    "name": "Abiniser",
-    "version": "0.0.0",
+    "name": "abiniser",
+    "version": "0.1.0",
     "description": "Truffle post processor to generate ABI and deployment repository files",
     "main": "index.js",
     "bin": {
