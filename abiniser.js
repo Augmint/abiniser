@@ -14,7 +14,7 @@ program
     .option('-i, --input-dir [value]', 'Sets input directory with truffle contract json files.', './build/contracts')
     .option('-a, --abi-output-dir [value]', 'Sets abi output directory.', './abiniser/abis')
     .option('-d, --deployments-output-dir [value]', 'Sets deployments output directory.', './abiniser/deployments')
-    .option('-r, --regenerate', 'Regenerate abi files even if they exists with same abi hash', false)
+    .option('-r, --regenerate', 'Regenerate abi and deploy files even if they exists with same abi hash', false)
     .option('-c, --config-file [value]', 'Sets abiniser config file.', './abiniser.json');
 
 program.on('--help', function() {
@@ -89,7 +89,7 @@ async function handler(program) {
 
             const abiHash = abiExtractor.generateAbiFile(content, abiOutputDir, regenerate);
 
-            deploymentsExtractor.updateDeploymentsFile(content, deploymentsOutputDir, abiHash);
+            deploymentsExtractor.updateDeploymentsFile(content, deploymentsOutputDir, abiHash, regenerate);
         });
     } catch (error) {
         console.error('Error:\n', error);
