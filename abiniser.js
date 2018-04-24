@@ -20,9 +20,11 @@ program
 program.on('--help', function() {
     console.log(
         `
+  More info: https://github.com/Augmint/abiniser
+
   Examples:
       abiniser
-        creates abi and network jsons from all truffle contract json files defined in config file
+        Creates abi and deployments jsons from all truffle contract json files listed in abiniser.json config file
 `
     );
 });
