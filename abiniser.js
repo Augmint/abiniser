@@ -12,8 +12,8 @@ program
     .description(pjson.description)
     .usage('[options]')
     .option('-i, --input-dir [value]', 'Sets input directory with truffle contract json files.', './build/contracts')
-    .option('-a, --abi-output-dir [value]', 'Sets abi output directory.', './abiniser')
-    .option('-d, --deployments-output-dir [value]', 'Sets deployments output directory.', './abiniser')
+    .option('-a, --abi-output-dir [value]', 'Sets abi output directory.', './abiniser/abis')
+    .option('-d, --deployments-output-dir [value]', 'Sets deployments output directory.', './abiniser/deployments')
     .option('-r, --regenerate', 'Regenerate abi files even if they exists with same abi hash', false)
     .option('-c, --config-file [value]', 'Sets abiniser config file.', './abiniser.json');
 
@@ -49,11 +49,9 @@ async function handler(program) {
 
         if (!filesLib.directoryExists(abiOutputDir)) {
             try {
-                await filesLib.mkdir(abiOutputDir);
+                filesLib.mkDirByPathSync(abiOutputDir);
             } catch (error) {
-                console.error(
-                    `Can't create abi output directory: ${abiOutputDir} - make sure parent directory exists\n${error}`
-                );
+                console.error(`Can't create abi output directory ${abiOutputDir}:\n${error}`);
                 process.exit(1);
             }
             console.log('Abi output director created:', abiOutputDir);
@@ -61,11 +59,9 @@ async function handler(program) {
 
         if (!filesLib.directoryExists(deploymentsOutputDir)) {
             try {
-                await filesLib.mkdir(deploymentsOutputDir);
+                filesLib.mkDirByPathSync(deploymentsOutputDir);
             } catch (error) {
-                console.error(
-                    `Can't create deployments output directory: ${deploymentsOutputDir} - make sure parent directory exists\n${error}`
-                );
+                console.error(`Can't create deployments output directory ${deploymentsOutputDir}\n${error}`);
                 process.exit(1);
             }
             console.log('Deployments output director created:', deploymentsOutputDir);
