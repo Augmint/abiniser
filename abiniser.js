@@ -15,6 +15,7 @@ program
     .option('-a, --abi-output-dir [value]', 'Sets abi output directory.', './abiniser/abis')
     .option('-d, --deployments-output-dir [value]', 'Sets deployments output directory.', './abiniser/deployments')
     .option('-r, --regenerate', 'Regenerate abi and deploy files even if they exists with same abi hash', false)
+    .option('-n, --network-id [value]', 'Generate deployments file only for the given network id number')
     .option('-c, --config-file [value]', 'Sets abiniser config file.', './abiniser.json');
 
 program.on('--help', function() {
@@ -43,6 +44,7 @@ async function handler(program) {
         const abiOutputDir = program.abiOutputDir || config.abiOutputDir;
         const deploymentsOutputDir = program.deploymentsOutputDir || config.deploymentsOutputDir;
         const regenerate = program.regenerate || config.regenerate;
+        const networkId = program.networkId || config.networkId;
 
         if (!filesLib.directoryExists(inputDir)) {
             console.error('Input directory doesn\'t exist: ', inputDir);
@@ -91,7 +93,7 @@ async function handler(program) {
 
             const abiHash = abiExtractor.generateAbiFile(content, abiOutputDir, regenerate);
 
-            deploymentsExtractor.updateDeploymentsFile(content, deploymentsOutputDir, abiHash, regenerate);
+            deploymentsExtractor.updateDeploymentsFile(content, deploymentsOutputDir, abiHash, regenerate, networkId);
         });
     } catch (error) {
         console.error('Error:\n', error);

@@ -27,6 +27,9 @@ TODO: more description on the workflow
 
 ```
 $ abiniser -h
+
+Usage: abiniser [options]
+
 Truffle post processor to generate ABI and deployment repository files
 
 Options:
@@ -36,14 +39,15 @@ Options:
   -a, --abi-output-dir [value]          Sets abi output directory. (default: ./abiniser/abis)
   -d, --deployments-output-dir [value]  Sets deployments output directory. (default: ./abiniser/deployments)
   -r, --regenerate                      Regenerate abi and deploy files even if they exists with same abi hash
+  -n, --network-id [value]              Generate deployments file only for the given network id number
   -c, --config-file [value]             Sets abiniser config file. (default: ./abiniser.json)
   -h, --help                            output usage information
 
-  More info: https://github.com/Augmint/abiniser
+More info: https://github.com/Augmint/abiniser
 
-  Examples:
-      abiniser
-        Creates abi and deployments jsons from all truffle contract json files listed in abiniser.json config file
+Examples:
+    abiniser
+      Creates abi and deployments jsons from all truffle contract json files listed in abiniser.json config file
 ```
 
 Create `abiniser.json` file with the list of contract files to work on:
