@@ -78,29 +78,31 @@ Each file contains the contract's Abi in [Solidity ABI JSON format](https://soli
 {
     "contractName": "<contract name>",
     "latestAbiHash": "7fde219f…",
-    "7fde219f…": {
-        "latestDeployedAddress": "7fde219f…",
-        "deployments": {
-            "7fde219f…": {
-                "generatedAt": "<ISO86901 timestamp>",
-                "truffleContractFileUpdatedAt": "<ISO86901 timestamp when source truffle contracts json was generated>",
-                "deployTransactionHash": "0x12…",
-                "compiler": {
-                    "name": "solc",
-                    "version": "0.4.23"
-                },
-                "sourceHash": "7fde219f…",
-                "bytecodeHash": "a454e8ba…",
-                "deployedBytecodeHash": "55abcee…",
-                "source": "<source code from truffle contract json"
-            },
-            "0xab444b...": {}
-        }
-    },
+    "deployedAbis": {
+        "7fde219f…": {
+            "latestDeployedAddress": "7fde219f…",
+            "deployments": {
+                "7fde219f…": {
+                    "generatedAt": "<ISO86901 timestamp>",
+                    "truffleContractFileUpdatedAt": "<ISO86901 timestamp when source truffle contracts json was generated>",
+                    "deployTransactionHash": "0x12…",
+                    "compiler": {
+                        "name": "solc",
+                        "version": "0.4.23"
+                    },
+                    "sourceHash": "7fde219f…",
+                    "bytecodeHash": "a454e8ba…",
+                    "deployedBytecodeHash": "55abcee…",
+                    "source": "<source code from truffle contract json>"
+                }
+                "0xab444b...": {…}
+            }
+        },
 
-    "a454e8ba… ": {
-        "latestDeployedAddress": "a9de219f…",
-        "deployments": {}
+        "a454e8ba… ": {
+            "latestDeployedAddress": "a9de219f…",
+            "deployments": {…}
+        }
     }
 }
 ```
