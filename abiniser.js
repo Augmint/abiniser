@@ -4,6 +4,7 @@
 const pjson = require('./package.json');
 const program = require('commander');
 const generate = require('./lib/generate.js');
+const removeSourceEntries = require('./lib/removeSourceEntries.js');
 
 function help() {
     console.log(
@@ -34,7 +35,19 @@ program
     .option('-s, --source-include', 'Include contract source in generated deploy file', false)
     .action(options => generate(options));
 
+program
+    .command('removeSourceEntries')
+    .alias('removeSrc')
+    .description('remove source entries from all deployment files')
+    .option(
+        '-d, --deployments-output-dir [value]',
+        'Sets deployments output directory to work on.',
+        './abiniser/deployments'
+    )
+    .action(options => removeSourceEntries(options));
+
 program.on('--help', () => help());
+
 program.on('command:*', () => {
     console.error('Invalid command: %s\nSee --help for a list of available commands.', program.args.join(' '));
 });
