@@ -149,7 +149,7 @@ Issue reports, feature suggestions and PRs are more than welcome.
 -   concept: [phraktle](https://github.com/phraktle) & [szerintedmi](https://github.com/szerintedmi)
 -   [szerintedmi](https://github.com/szerintedmi)
 
-Check the whole team on [augmint.cc](http://www.augmint.cc)
+Check the whole team on [augmint.org](https://www.augmint.org)
 
 ## Licence
 
