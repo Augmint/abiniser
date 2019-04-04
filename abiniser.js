@@ -16,7 +16,8 @@ program
     .option('-d, --deployments-output-dir [value]', 'Sets deployments output directory.', './abiniser/deployments')
     .option('-r, --regenerate', 'Regenerate abi and deploy files even if they exists with same abi hash', false)
     .option('-n, --network-id [value]', 'Generate deployments file only for the given network id number')
-    .option('-c, --config-file [value]', 'Sets abiniser config file.', './abiniser.json');
+    .option('-c, --config-file [value]', 'Sets abiniser config file.', './abiniser.json')
+    .option('-s, --source-include', 'Include contract source in generated deploy file', false);
 
 program.on('--help', function() {
     console.log(
@@ -45,6 +46,7 @@ async function handler(program) {
         const deploymentsOutputDir = program.deploymentsOutputDir || config.deploymentsOutputDir;
         const regenerate = program.regenerate || config.regenerate;
         const networkId = program.networkId || config.networkId;
+        const sourceInclude = program.sourceInclude || config.sourceInclude;
 
         if (!filesLib.directoryExists(inputDir)) {
             console.error('Input directory doesn\'t exist: ', inputDir);
@@ -93,7 +95,14 @@ async function handler(program) {
 
             const abiHash = abiExtractor.generateAbiFile(content, abiOutputDir, regenerate);
 
-            deploymentsExtractor.updateDeploymentsFile(content, deploymentsOutputDir, abiHash, regenerate, networkId);
+            deploymentsExtractor.updateDeploymentsFile(
+                content,
+                deploymentsOutputDir,
+                abiHash,
+                regenerate,
+                networkId,
+                sourceInclude
+            );
         });
     } catch (error) {
         console.error('Error:\n', error);

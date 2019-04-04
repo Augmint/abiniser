@@ -1,6 +1,6 @@
 {
     "name": "abiniser",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "description": "Truffle post processor to generate ABI and deployment repository files",
     "main": "abiniser.js",
     "bin": {
@@ -24,7 +24,7 @@
     "homepage": "https://github.com/Augmint/abiniser#readme",
     "private": false,
     "dependencies": {
-        "commander": "2.15.1",
+        "commander": "2.20.0",
         "json-stable-stringify": "1.0.1",
         "md5": "2.2.1"
     }

@@ -41,6 +41,7 @@ Options:
   -r, --regenerate                      Regenerate abi and deploy files even if they exists with same abi hash
   -n, --network-id [value]              Generate deployments file only for the given network id number
   -c, --config-file [value]             Sets abiniser config file. (default: ./abiniser.json)
+  -s, --source-include                  Include contract source in generated deploy file
   -h, --help                            output usage information
 
 More info: https://github.com/Augmint/abiniser
@@ -115,8 +116,8 @@ Issue reports, feature suggestions and PRs are more than welcome.
 
 ### Initial version
 
-*   concept: [phraktle](https://github.com/phraktle) & [szerintedmi](https://github.com/szerintedmi)
-*   [szerintedmi](https://github.com/szerintedmi)
+-   concept: [phraktle](https://github.com/phraktle) & [szerintedmi](https://github.com/szerintedmi)
+-   [szerintedmi](https://github.com/szerintedmi)
 
 Check the whole team on [augmint.cc](http://www.augmint.cc)
 
