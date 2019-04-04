@@ -5,6 +5,7 @@ const pjson = require('./package.json');
 const program = require('commander');
 const generate = require('./lib/generate.js');
 const removeSourceEntries = require('./lib/removeSourceEntries.js');
+const checkIntegrity = require('./lib/checkIntegrity.js');
 
 function help() {
     console.log(
@@ -45,6 +46,17 @@ program
         './abiniser/deployments'
     )
     .action(options => removeSourceEntries(options));
+
+program
+    .command('check')
+    .description('Basic integrity check of files generated. Checks references between Abi files and deployment files')
+    .option('-a, --abi-output-dir [value]', 'Sets abi output directory to work on.', './abiniser/abis')
+    .option(
+        '-d, --deployments-output-dir [value]',
+        'Sets deployments output directory to work on.',
+        './abiniser/deployments'
+    )
+    .action(options => checkIntegrity(options));
 
 program.on('--help', () => help());
 
