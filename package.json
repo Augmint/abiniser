@@ -26,6 +26,6 @@
     "dependencies": {
         "commander": "2.20.0",
         "json-stable-stringify": "1.0.1",
-        "md5": "2.2.1"
+        "md5": "2.3.0"
     }
 }
