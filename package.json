@@ -24,7 +24,7 @@
     "homepage": "https://github.com/Augmint/abiniser#readme",
     "private": false,
     "dependencies": {
-        "commander": "2.20.0",
+        "commander": "9.3.0",
         "json-stable-stringify": "1.0.1",
         "md5": "2.2.1"
     }
